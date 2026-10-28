@@ -2,33 +2,27 @@
 
 Maqueta de la pantalla de juego de **Hundir la flota** para Android, desarrollada como proyecto de clase de DAM2.
 
-> Es un prototipo visual: **no tiene lógica de juego**. Los estados de las casillas (agua, fallo, tocado, hundido) y los barcos son datos fijos de ejemplo para mostrar cómo se vería una partida. Los botones se ven, pero no hacen nada.
+> Es un prototipo visual: **no tiene lógica de juego**. Los colores de las casillas son fijos y sirven de ejemplo de cómo se vería una partida. Los botones se ven, pero no hacen nada.
 
-## Capturas
+## Captura
 
-<!-- Guarda tus capturas en la carpeta /screenshots y ajusta el nombre del archivo -->
-| Pantalla de juego                                 |
-|---------------------------------------------------|
-| ![Pantalla de juego](Capturas/pantalla_juego.png) |
+![Pantalla de juego](Capturas/pantalla_maqueta.png)
 
 ## Qué incluye la pantalla
 
-- Cabecera con el título y el temporizador.
-- Indicador de turno ("Tu turno").
-- Tablero enemigo de 10x10 con coordenadas (A-J y 1-10).
-- Tablero propio reducido, con los barcos colocados.
-- Estado de la flota enemiga (portaaviones, acorazado, crucero, submarino y destructor).
+- Título del juego y mensaje de turno.
+- Tablero de 10x10 casillas.
+- Leyenda de colores.
 - Botones "Rendirse" y "Ajustes".
 
-### Estados de las casillas
+### Colores de las casillas
 
-| Estado | Aspecto |
+| Estado | Color |
 |---|---|
 | Agua | Azul |
-| Fallo | Azul con un punto blanco |
-| Tocado | Rojo con una X |
-| Hundido | Rojo oscuro con una X |
-| Barco propio | Gris |
+| Fallo | Azul claro |
+| Tocado | Rojo |
+| Hundido | Granate |
 
 ## Tecnologías
 
@@ -52,18 +46,19 @@ Maqueta de la pantalla de juego de **Hundir la flota** para Android, desarrollad
 app/src/main/java/com/sergio/proyectomaqueta/
 ├── MainActivity.kt          # Punto de entrada: muestra la pantalla
 └── composables/
-    ├── Casilla.kt           # Casilla individual y sus estados (EstadoCasilla)
-    ├── Tablero.kt           # Tablero 10x10 reutilizable (grande y pequeño)
-    └── Pantalla.kt          # Pantalla de juego completa
+    ├── Casilla.kt           # Una casilla (color y tamaño) y los colores del juego
+    ├── Tablero.kt           # Tablero 10x10 hecho con bucles for
+    └── Pantalla.kt          # Pantalla completa: título, tablero, leyenda y botones
 ```
 
 ### Cómo está construido
 
-- **`Casilla`**: una casilla cuyo color y símbolo dependen de su estado y que se adapta al tamaño que reciba.
-- **`Tablero`**: se reutiliza para el tablero enemigo (grande, con coordenadas) y para el propio (pequeño, sin coordenadas). Recibe un mapa con las casillas especiales; el resto es agua.
-- **`Pantalla`**: junta cabecera, turno, tableros, estado de la flota y botones.
+- **`Casilla`**: un `Box` cuadrado con esquinas redondeadas. Recibe el color y el tamaño como parámetros.
+- **`Tablero`**: dos bucles `for` anidados dentro de una `Column` y una `Row` crean las 100 casillas. Con `if` se elige el color de cada una según su fila y columna.
+- **`Pantalla`**: junta todo en una `Column` centrada con `Text`, el tablero, una leyenda y dos `Button`.
 
 ## Autor
 
-- **Nombre:** Sergio
+- **Nombre:** TU NOMBRE
 - **Curso:** DAM2
+- **Asignatura:** TU ASIGNATURA
