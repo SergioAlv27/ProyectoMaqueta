@@ -17,8 +17,11 @@ val ColorFallo = Color(0xFFBBD7F5)
 val ColorTocado = Color(0xFFE24B4A)
 val ColorHundido = Color(0xFF791F1F)
 
+// Tamaño de las casillas (lo usan también las etiquetas A-J y 1-10)
+val TamanoCasilla = 28.dp
+
 @Composable
-fun Casilla(color: Color, tamano: Dp = 30.dp) {
+fun Casilla(color: Color, tamano: Dp = TamanoCasilla) {
     Box(
         modifier = Modifier
             .size(tamano)

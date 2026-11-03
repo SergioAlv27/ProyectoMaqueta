@@ -11,7 +11,7 @@ Maqueta de la pantalla de juego de **Hundir la flota** para Android, desarrollad
 ## Qué incluye la pantalla
 
 - Título del juego y mensaje de turno.
-- Tablero de 10x10 casillas.
+- Tablero de 10x10 casillas con coordenadas (letras A-J arriba y números 1-10 a la izquierda).
 - Leyenda de colores.
 - Botones "Rendirse" y "Ajustes".
 
@@ -47,14 +47,15 @@ app/src/main/java/com/sergio/proyectomaqueta/
 ├── MainActivity.kt          # Punto de entrada: muestra la pantalla
 └── composables/
     ├── Casilla.kt           # Una casilla (color y tamaño) y los colores del juego
-    ├── Tablero.kt           # Tablero 10x10 hecho con bucles for
+    ├── Tablero.kt           # Tablero 10x10 con coordenadas, hecho con bucles for
     └── Pantalla.kt          # Pantalla completa: título, tablero, leyenda y botones
 ```
 
 ### Cómo está construido
 
 - **`Casilla`**: un `Box` cuadrado con esquinas redondeadas. Recibe el color y el tamaño como parámetros.
-- **`Tablero`**: dos bucles `for` anidados dentro de una `Column` y una `Row` crean las 100 casillas. Con `if` se elige el color de cada una según su fila y columna.
+- **`Etiqueta`**: un `Box` del mismo tamaño que una casilla con un texto centrado, que se usa para las letras y los números del tablero.
+- **`Tablero`**: dos bucles `for` anidados dentro de una `Column` y una `Row` crean las 100 casillas, con una fila de letras arriba y una columna de números a la izquierda. Con `if` se elige el color de cada casilla según su fila y columna.
 - **`Pantalla`**: junta todo en una `Column` centrada con `Text`, el tablero, una leyenda y dos `Button`.
 
 ## Autor

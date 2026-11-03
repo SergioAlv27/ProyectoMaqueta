@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -35,7 +36,9 @@ fun Pantalla(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
     ) {
-        Text("Hundir la flota", fontSize = 24.sp)
+        Text("Hundir la flota", fontSize = 30.sp,fontWeight = FontWeight.Black,
+            letterSpacing = 2.sp,
+            color = Color(0xFF00BCD4))
         Text("Tu turno: dispara a las aguas enemigas", fontSize = 14.sp)
 
         Tablero()
