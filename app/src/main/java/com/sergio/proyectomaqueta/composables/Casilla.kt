@@ -11,13 +11,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-// Colores del juego (variables sueltas)
+
 val ColorAgua = Color(0xFF4A90D9)
 val ColorFallo = Color(0xFFBBD7F5)
 val ColorTocado = Color(0xFFE24B4A)
-val ColorHundido = Color(0xFF791F1F)
+val ColorHundido = Color(0xFFA32D2D)
 
-// Tamaño de las casillas (lo usan también las etiquetas A-J y 1-10)
+val ColorFondo = Color(0xFF0B1F3A)
+
+val ColorBarco = Color(0xFF888780)
+
+
 val TamanoCasilla = 28.dp
 
 @Composable

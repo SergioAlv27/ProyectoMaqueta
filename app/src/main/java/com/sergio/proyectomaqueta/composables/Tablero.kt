@@ -27,7 +27,6 @@ fun Etiqueta(texto: String) {
 fun Tablero() {
     Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
 
-        // Fila de arriba: un hueco vacío y las letras A-J
         Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
             Etiqueta("")
             for (letra in "ABCDEFGHIJ") {
@@ -35,7 +34,7 @@ fun Tablero() {
             }
         }
 
-        // Las 10 filas: primero el número y luego las 10 casillas
+
         for (fila in 1..10) {
             Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
                 Etiqueta(fila.toString())
